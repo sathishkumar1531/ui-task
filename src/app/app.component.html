@@ -1,0 +1,158 @@
+<router-outlet></router-outlet>
+<section class="header-banner">
+  <P class="header-banner__offer-details">Book now to get exciting travel deals.Upto 40% off on credit card payments</P>
+  <p class="header-banner__offer-ends">Offers ends in {{offerEndTime}}</p>
+</section>
+
+<section class="navigation">
+  <nav>
+    <a href="javascript:void(0)">Weather</a>
+    <a href="javascript:void(0)">Destinations</a>
+    <a href="javascript:void(0)">Get a quote</a>
+  </nav>
+</section>
+<section class="welcome-content">
+  <div class="welcome-content__img">
+    <img src="../assets/images/welcome-image.svg">
+  </div>
+  <div class="welcome-content__box">
+    <div class="welcome-content__text">
+      <h1 class="welcome-content__text--tag">Life is short</h1>
+      <h1 class="welcome-content__text--tag">and the world is wide!</h1>
+      <p class="welcome-content__text--description">Stay at the comfort of your homes and book a trip to travel after
+        the post pandemic era.</p>
+      <a class="welcome-content__planning" href="javascript:void(0)">Plan a trip</a>
+    </div>
+  </div>
+</section>
+
+<section class="weather-channel">
+  <h2 class="weather-channel__header">
+    The weather channel
+  </h2>
+  <div class="weather-channel__cities">
+    <div *ngFor = "let items of weatherReports; let i = index" 
+      class="weather-channel__different-city weather-channel__different-city--{{i+1}}">
+      <h3>{{items.city}}</h3>
+      <i class="icon-weather-variable-sun"></i>
+      <span>{{items.temperature}}</span>
+    </div>
+    <!-- <div class="weather-channel__different-city weather-channel__different-city--2">
+      <h3>Tokyo</h3>
+      <i class="icon-weather-variable-sun"></i>
+      <span>32</span>
+    </div>
+    <div class="weather-channel__different-city weather-channel__different-city--3">
+      <h3>London</h3>
+      <i class="icon-weather-variable-sun"></i>
+      <span>32</span>
+    </div>
+    <div class="weather-channel__different-city weather-channel__different-city--4">
+      <h3>Dubai</h3>
+      <i class="icon-weather-variable-sun"></i>
+      <span>32</span>
+    </div> -->
+  </div>
+</section>
+
+<section class="destinations">
+  <h2 class="destinations__header"> Featured Destinations</h2>
+  <ul class="destinations__cities">
+    <li *ngFor = "let item of destinationList">
+      <figure class="destinations__cities--images">
+        <img [src]="item.imageUrl">
+      </figure>
+      <span>{{item.city}}</span>
+    </li>
+  </ul>
+</section>
+
+<section class="promo-content">
+  <div class="promo-content--plan">
+    <h1>Plan a trip</h1>
+    <p>Make your vacation the most</p>
+    <p>memorable one</p>
+  </div>
+</section>
+
+<section class="form-section">
+  <h2 class="form-section__header">Travelling as a group? Get a Quote</h2>
+  <div class="form-section--user">
+    <form [formGroup] = "userForm" (ngSubmit)="onSubmit()">
+      <label for="name">Your name</label>
+      <input type="text" name="name" id="name" formControlName="name" autocomplete="off"/>
+      <div *ngIf="userForm.controls['name'].hasError('required') && userForm.controls['name'].dirty">Name is required</div>
+
+      <label for="email">Contact No</label>
+      <input type="text" 
+        pattern="[0-9]+"
+        name="email" 
+        id="email"
+        formControlName="contactNo"
+        autocomplete="off"/>
+      <div 
+        *ngIf="userForm.controls['contactNo'].hasError('required') && userForm.controls['contactNo'].dirty">
+        Contact No is required
+      </div>
+      <div *ngIf="userForm.controls['contactNo'].hasError('pattern') || userForm.controls['contactNo'].hasError('minlength') || userForm.controls['contactNo'].hasError('maxlength')">
+        Invalid Contact No
+      </div>
+
+      <label for="email">Email</label>
+      <input type="text" 
+        [pattern]="emailRegEx" 
+        name="email" 
+        id="email"
+        formControlName="emailAddress"
+        autocomplete="off"/>
+      <div 
+        *ngIf="userForm.controls['emailAddress'].hasError('required') && userForm.controls['emailAddress'].dirty">
+        Email is required
+      </div>
+      <div *ngIf="userForm.controls['emailAddress'].hasError('pattern')">
+        Invalid Email
+      </div>
+
+      <p class="form-section--submit-success" *ngIf = "successFormSubmit">
+        We hear you! We will get back to you for planning your vacation.
+      </p>
+      <input type="submit" [disabled]="userForm.status === 'INVALID'" value="Submit" />
+    </form> 
+  </div>
+</section>
+<section class="footer-section">
+  <footer class="row">
+    <div class="col-2-of-12">
+      <h3>Tripzone</h3>
+      <ul>
+        <li>About</li>
+        <li>Award</li>
+        <li>Contact Us</li>
+        <li>Feedback</li>
+      </ul>
+    </div>
+    <div class="col-2-of-12">
+      <h3>Main Offices</h3>
+      <ul>
+        <li>The United States</li>
+        <li>India</li>
+        <li>Brazil</li>
+        <li>Canada</li>
+      </ul>
+    </div>
+    <div class="col-2-of-12">
+      <h3>Sub Offices</h3>
+      <ul>
+        <li>Australia</li>
+        <li>England</li>
+        <li>France</li>
+        <li>Germany</li>
+      </ul>
+    </div>
+    <div class="col-6-of-12 footer-section--disclaimer">
+      <h3>Disclaimer</h3>
+      <p>This layout is created as part of Sirius UI Recruitements.</p>
+      <p>All the about content has not direct relation with sirius business.</p>
+    </div>
+  </footer>
+</section>
