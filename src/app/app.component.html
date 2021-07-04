@@ -6,9 +6,9 @@
 
 <section class="navigation">
   <nav>
-    <a href="javascript:void(0)">Weather</a>
-    <a href="javascript:void(0)">Destinations</a>
-    <a href="javascript:void(0)">Get a quote</a>
+    <a href="#go_to_weather">Weather</a>
+    <a href="#go_to_destinations">Destinations</a>
+    <a href="#go_to_quote">Get a quote</a>
   </nav>
 </section>
 <section class="welcome-content">
@@ -26,7 +26,7 @@
   </div>
 </section>
 
-<section class="weather-channel">
+<section id = "go_to_weather" class="weather-channel">
   <h2 class="weather-channel__header">
     The weather channel
   </h2>
@@ -55,7 +55,7 @@
   </div>
 </section>
 
-<section class="destinations">
+<section id = "go_to_destinations" class="destinations">
   <h2 class="destinations__header"> Featured Destinations</h2>
   <ul class="destinations__cities">
     <li *ngFor = "let item of destinationList">
@@ -75,7 +75,7 @@
   </div>
 </section>
 
-<section class="form-section">
+<section id = "go_to_quote" class="form-section">
   <h2 class="form-section__header">Travelling as a group? Get a Quote</h2>
   <div class="form-section--user">
     <form [formGroup] = "userForm" (ngSubmit)="onSubmit()">
