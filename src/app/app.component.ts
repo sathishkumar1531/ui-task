@@ -98,36 +98,4 @@ export class AppComponent {
     this.userForm.reset();
     this.successFormSubmit = true;
   }
-  
-  // nameMessage: string;
-
-
-  // userNameValidation = false;
-  // emailValidation = false;
-  // confirmEmailValidation = false;
-
-
-  // onSubmit() {
-  //   let userName = this.userForm.get('name').value.split(' ');
-  //   let emailValue = this.userForm.get('emailAddress').value;
-  //   let confirmEmail = this.userForm.get('confirmEmailAddress').value;
-
-  //   if (userName.length === 1 || (userName.length > 1 && userName[1] == "")) {
-  //     this.userNameValidation = true;
-  //   } else {
-  //     this.userNameValidation = false;
-  //   }
-
-  //   if (emailValue !== confirmEmail) {
-  //     this.confirmEmailValidation = true;
-  //   } else {
-  //     this.confirmEmailValidation = false;
-  //   }
-
-  //   if (this.userNameValidation && this.confirmEmailValidation) {
-  //     return;
-  //   }
-
-
-  // }
 }
