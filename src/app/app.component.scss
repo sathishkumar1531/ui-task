@@ -43,12 +43,13 @@
         width: 50%;
         // background-color: red;  
         height: 100%;
+        padding: 5rem;
         & img {
             display: block;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            width:75%;
+            // position: relative;
+            // top: 50%;
+            // transform: translateY(-50%);
+            width:100%;
             margin: auto;
         } 
     }
@@ -59,6 +60,7 @@
         width: 50%;
         float: left;
         line-height: normal;
+        padding-left: 5rem;
     }
 
     &__text {
@@ -346,10 +348,10 @@
             float: none;
             width: 100%;
             height: auto;
-            
-            background-color: #0D7E88;
+            padding: 10rem;
+            // background-color: #0D7E88;
             & img {
-                width: 50%;
+                width: 100%;
                 transform: none;
             } 
             margin-bottom: 3rem;
@@ -358,6 +360,7 @@
         &__box {
             width: 100%;
             float: none;
+            padding-left: 0;
             // background-color: #405B5D;
         }
     
