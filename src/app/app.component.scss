@@ -25,7 +25,7 @@
         
         a {
             text-decoration: none;
-            padding: 0 40px;
+            padding: 0 4rem;
             color: $color-black;
         }
     }
@@ -322,6 +322,126 @@
 
         & p {
             line-height: 1.7;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .header-banner {
+        font-size: 1.3rem;
+    }
+    .navigation {
+        // font-size: 1.2rem;
+        nav {
+            float: none;
+            text-align: center;
+        }
+    }
+    .welcome-content {
+        width: 100%;
+        height: auto;
+        &__img { 
+            float: none;
+            width: 100%;
+            height: auto;
+            
+            background-color: #0D7E88;
+            & img {
+                width: 50%;
+                transform: none;
+            } 
+            margin-bottom: 3rem;
+        }
+
+        &__box {
+            width: 100%;
+            float: none;
+            // background-color: #405B5D;
+        }
+    
+        &__text {
+            // position: relative;
+            // top: none;
+            
+            transform: none;
+            padding-right: 0;
+            &--tag {
+                text-align: center;
+            }
+            &--description {
+                text-align: center;
+                padding-right: 1rem;
+                padding-left: 1rem;
+            }
+        }
+        &__planning {
+            display: block;
+            width: 25%;
+            text-align: center;
+            margin: auto;
+            margin-top: 4rem;
+            font-size: 1rem;
+        }
+    }
+
+    .weather-channel {
+        width: 100%;
+        &__header {
+            text-align: center;
+        }
+        &__different-city {
+            width: 50%;
+        }
+    }
+
+    .destinations {
+        &__cities {
+            & li {
+                width: 40%;
+            }
+        }
+    }
+
+    .promo-content {
+
+        &--plan {
+            & p {
+                padding-top: 0;
+                font-size: 1.5rem;  
+            }
+        }
+        
+    }
+
+    .form-section {
+        width: 100%;
+        &__header {
+            font-size: 2rem;
+        }
+    }
+
+    .footer-section {
+        .col-2-of-12 {
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+
+        .col-6-of-12 {
+            width: 100%;
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 768px) { 
+    .navigation {
+        font-size: 1.2rem;
+        nav {
+            & a {
+                padding: 0 2.5rem;
+            }
         }
     }
 }

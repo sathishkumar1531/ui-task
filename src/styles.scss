@@ -31,6 +31,7 @@ body {
     box-sizing: border-box;
     text-rendering: optimizeLegibility; // this will make our fonts rendering in a perfect way.
     // overflow-x: hidden;
+    // background-color: red;
 }
 
 .row {
@@ -88,4 +89,12 @@ body {
     .col-10-of-12 {
         width: calc(10 * ((100% - 11 * 0rem) / 12) + (9 * 0rem));
     }
+}
+
+@media only screen and (max-width: 768px) {
+
+    html {
+        font-size: 8px;
+    }
+
 }
