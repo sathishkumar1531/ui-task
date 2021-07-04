@@ -1,0 +1,41 @@
+.loader-backdrop {
+    background: black;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999999;
+    opacity: 0.5;
+}
+
+.loader-parent {
+    z-index: 9999999;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.circle {
+    height: 75px;
+    width: 75px;
+    border: 3px solid yellow;
+    border-radius: 50px;
+    border-left-color: black;
+    animation: rotate-cirle 1s infinite;
+    transition: all 1s;
+}
+
+@keyframes rotate-cirle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

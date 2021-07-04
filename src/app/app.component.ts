@@ -11,6 +11,9 @@ export class AppComponent {
   title = 'travel';
   offerEndTime = '';
 
+  //application loader
+  loader = false;
+
   // weather details
   weatherReports = [];
   destinationList: any;
@@ -31,7 +34,6 @@ export class AppComponent {
     });
     this.countdownTimeStart();
     this.fetchWeather();
-    this.fetchDestinations();
   }
 
   countdownTimeStart() {
@@ -64,6 +66,7 @@ export class AppComponent {
   }
 
   fetchWeather() {
+    this.loader = true;
     this.appService.getWeather().subscribe((data) => {
       console.log(data);
       this.weatherReports = [];
@@ -75,12 +78,14 @@ export class AppComponent {
           })
         });
       }
+      this.fetchDestinations();
     })
   }
 
   fetchDestinations() {
     this.appService.getDestinations().subscribe((data) => {
       console.log(data);
+      this.loader = false;
       this.destinationList = [];
       if (data && data.body && data.body.result) {
         data.body.result.forEach(element => {
